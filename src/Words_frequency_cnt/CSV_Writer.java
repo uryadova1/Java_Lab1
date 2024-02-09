@@ -7,15 +7,11 @@ public class CSV_Writer {
     public static LinkedHashMap<String, Integer> sort_dictionary(HashMap<String, Integer> dictionary) {
         ArrayList<Integer> list = new ArrayList<>();
 
-        /*Только что созданный объект linkedHashMap,
-        помимо свойств унаследованных от HashMap
-        (такие как table, loadFactor, threshold, size, entrySet и т.п.),
-        так же содержит два доп. свойства:
-        header — «голова» двусвязного списка.При инициализации указывает сам на себя;
-        accessOrder — указывает каким образом будет осуществляться доступ к
-        элементам при использовании итератора. При значении true — по порядку
-        последнего доступа (об этом в конце статьи). При значении false доступ
-        осуществляется в том порядке, в каком элементы были вставлены.*/
+        /*LinkedHashMap — это специальный вид HashMap,
+        который сохраняет порядок добавления элементов.
+        Это достигается за счет поддержки двусвязного списка
+        элементов. Поэтому, при выводе элементов на экран,
+        порядок их следования будет соответствовать порядку добавления.*/
 
         LinkedHashMap<String, Integer> sortedMap = new LinkedHashMap<>();
         for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
