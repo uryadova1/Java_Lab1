@@ -3,8 +3,10 @@ package Words_frequency_cnt;
 import java.util.*;
 import java.io.*;
 
-public class CSV_Writer {
-    public static LinkedHashMap<String, Integer> sort_dictionary(HashMap<String, Integer> dictionary) {
+public class CSVWriter {
+
+    public CSVWriter(){}
+    public LinkedHashMap<String, Integer> sort_dictionary(HashMap<String, Integer> dictionary) {
         ArrayList<Integer> list = new ArrayList<>();
 
         /*LinkedHashMap — это специальный вид HashMap,
@@ -28,10 +30,10 @@ public class CSV_Writer {
         return sortedMap;
     }
 
-    public static void write_to_csv(HashMap<String, Integer> dictionary, int words_cnt, String filename) throws IOException {
+    public void write_to_csv(HashMap<String, Integer> dictionary, int words_cnt, String filename) throws IOException {
 
-        try {
-            FileWriter csv_file = new FileWriter(filename, false);
+        try (FileWriter csv_file = new FileWriter(filename, false);) {
+
             List<String> keys = new ArrayList<String>(dictionary.keySet());
             for (int i = 0; i < keys.size(); i++) {
                 String key = keys.get(i);

@@ -5,22 +5,27 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class Text_Reader {
+public class TextReader {
 
-    public static HashMap<String, Integer> DICTIONARY = new HashMap<>();
-    public static int WORDS_CNT = 0;
+    public HashMap<String, Integer> DICTIONARY;
+    public int WORDS_CNT;
 
-    public static int get_words_cnt() {
-        return WORDS_CNT;
+    public int getWordsCnt() {
+        return this.WORDS_CNT;
     }
 
-    public static void plus_words_cnt() {
-        WORDS_CNT += 1;
+    public void plusWordsCnt() {
+        this.WORDS_CNT += 1;
     }
 
-    public static void read_file(String filename) {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(filename));
+    public TextReader(){
+        this.DICTIONARY = new HashMap<>();
+        this.WORDS_CNT = 0;
+    }
+
+    public void read_file(String filename) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename));) {
+
             String line = reader.readLine();
             while (line != null) {
                 int len = line.length();
@@ -35,7 +40,7 @@ public class Text_Reader {
                             } else {
                                 DICTIONARY.put(word, 1);
                             }
-                            plus_words_cnt();
+                            plusWordsCnt();
                         }
                         word = "";
                     }
@@ -48,8 +53,8 @@ public class Text_Reader {
         }
     }
 
-    public static HashMap<String, Integer> return_dictionary() {
-        return DICTIONARY;
+    public HashMap<String, Integer> return_dictionary() {
+        return this.DICTIONARY;
 
     }
 }

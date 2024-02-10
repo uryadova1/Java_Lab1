@@ -8,12 +8,12 @@ public class Main {
 
 
     public static void main(String[] args) throws IOException {
-        Text_Reader reader = new Text_Reader();
-        CSV_Writer writer = new CSV_Writer();
+        TextReader reader = new TextReader();
+        CSVWriter writer = new CSVWriter();
         reader.read_file(args[0]);
         HashMap<String, Integer> dictionary = reader.return_dictionary();
         dictionary = writer.sort_dictionary(dictionary);
-        int words_cnt = reader.get_words_cnt();
+        int words_cnt = reader.getWordsCnt();
         writer.write_to_csv(dictionary, words_cnt, args[1]);
     }
 }
