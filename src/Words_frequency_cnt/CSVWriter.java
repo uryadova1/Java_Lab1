@@ -19,7 +19,7 @@ public class CSVWriter {
         for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
             list.add(entry.getValue());
         }
-        Collections.sort(list, Collections.reverseOrder());
+        list.sort(Collections.reverseOrder());
         for (int num : list) {
             for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
                 if (entry.getValue().equals(num)) {
