@@ -34,7 +34,7 @@ public class TextReader {
                     if (Character.isLetterOrDigit(line.charAt(i))) {
                         word = word + line.charAt(i);
                     } else {
-                        if (!(word == "")) {
+                        if (!(word.isEmpty())) {
                             if (DICTIONARY.containsKey(word)) {
                                 DICTIONARY.put(word, DICTIONARY.get(word) + 1);
                             } else {

@@ -35,8 +35,7 @@ public class CSVWriter {
         try (FileWriter csv_file = new FileWriter(filename, false);) {
 
             List<String> keys = new ArrayList<String>(dictionary.keySet());
-            for (int i = 0; i < keys.size(); i++) {
-                String key = keys.get(i);
+            for (String key : keys) {
                 int value = dictionary.get(key);
                 double num = ((double) value / words_cnt) * 100;
                 String text = key + ";" + value + ";" + String.format("%f", num);
