@@ -23,7 +23,7 @@ public class TextReader {
         this.WORDS_CNT = 0;
     }
 
-    public void read_file(String filename) {
+    public void readFile(String filename) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename));) {
 
             String line = reader.readLine();
@@ -53,7 +53,7 @@ public class TextReader {
         }
     }
 
-    public HashMap<String, Integer> return_dictionary() {
+    public HashMap<String, Integer> returnDictionary() {
         return this.DICTIONARY;
 
     }

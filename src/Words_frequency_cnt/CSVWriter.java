@@ -6,7 +6,7 @@ import java.io.*;
 public class CSVWriter {
 
     public CSVWriter(){}
-    public LinkedHashMap<String, Integer> sort_dictionary(HashMap<String, Integer> dictionary) {
+    public LinkedHashMap<String, Integer> SortDictionary(HashMap<String, Integer> dictionary) {
         ArrayList<Integer> list = new ArrayList<>();
 
         /*LinkedHashMap — это специальный вид HashMap,
@@ -30,7 +30,7 @@ public class CSVWriter {
         return sortedMap;
     }
 
-    public void write_to_csv(HashMap<String, Integer> dictionary, int words_cnt, String filename) throws IOException {
+    public void writeToCsv(HashMap<String, Integer> dictionary, int words_cnt, String filename) throws IOException {
 
         try (FileWriter csv_file = new FileWriter(filename, false);) {
 

@@ -10,11 +10,11 @@ public class Main {
     public static void main(String[] args) throws IOException {
         TextReader reader = new TextReader();
         CSVWriter writer = new CSVWriter();
-        reader.read_file(args[0]);
-        HashMap<String, Integer> dictionary = reader.return_dictionary();
-        dictionary = writer.sort_dictionary(dictionary);
+        reader.readFile(args[0]);
+        HashMap<String, Integer> dictionary = reader.returnDictionary();
+        dictionary = writer.SortDictionary(dictionary);
         int words_cnt = reader.getWordsCnt();
-        writer.write_to_csv(dictionary, words_cnt, args[1]);
+        writer.writeToCsv(dictionary, words_cnt, args[1]);
     }
 }
 
