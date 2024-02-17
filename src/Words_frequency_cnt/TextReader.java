@@ -24,7 +24,7 @@ public class TextReader {
     }
 
     public void readFile(String filename) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(filename));) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
 
             String line = reader.readLine();
             while (line != null) {
@@ -47,7 +47,6 @@ public class TextReader {
                 }
                 line = reader.readLine();
             }
-            reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

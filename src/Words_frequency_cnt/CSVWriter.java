@@ -32,9 +32,9 @@ public class CSVWriter {
 
     public void writeToCsv(HashMap<String, Integer> dictionary, int words_cnt, String filename) throws IOException {
 
-        try (FileWriter csv_file = new FileWriter(filename, false);) {
+        try (FileWriter csv_file = new FileWriter(filename, false)) {
 
-            List<String> keys = new ArrayList<String>(dictionary.keySet());
+            List<String> keys = new ArrayList<>(dictionary.keySet());
             for (String key : keys) {
                 int value = dictionary.get(key);
                 double num = ((double) value / words_cnt) * 100;
